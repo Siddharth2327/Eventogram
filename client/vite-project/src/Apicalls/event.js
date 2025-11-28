@@ -26,7 +26,7 @@ export const getUserEvents = async (userId) => {
   try {
     const response = await axiosInstance.get(`/events/get-userevents/${userId}`);
     console.log(response);
-    return response.data.data || [];
+    return response.data.data || []; // baasically when the user's last event is updated without him by himself, it gives an error becuase there were no events and it points to null, so i added a fallback empty array if the user has no evnts
   } catch (err) {
     console.log(err);
     throw err;
@@ -44,3 +44,4 @@ export const getEventLogs = async (eventId) => {
     throw err;
   }
 };
+
