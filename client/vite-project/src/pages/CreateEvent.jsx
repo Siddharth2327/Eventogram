@@ -30,7 +30,7 @@ const CreateEvent = () => {
 
   const handleSubmit = async () => {
     if (!profiles.length || !startDate || !endDate) {
-      toast.warn("Please fill all the fileds")
+      toast.warn("Please fill all the fields")
       return;
     }
     if (endDate <= startDate) {
@@ -103,3 +103,4 @@ const CreateEvent = () => {
 };
 
 export default CreateEvent;
+
